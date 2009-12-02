@@ -1,0 +1,281 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (53.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (47.1ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateCategories (20091202222104)
+  [4;35;1mSQL (60.5ms)[0m   [0mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091202222104')[0m
+Migrating to CreateItems (20091202223029)
+  [4;35;1mSQL (206.5ms)[0m   [0mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` text, `category_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091202223029')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `categories`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `categories`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `items`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `items`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (38.8ms)[0m   [0mDROP TABLE `categories`[0m
+  [4;36;1mSQL (59.5ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (40.0ms)[0m   [0;1mDROP TABLE `items`[0m
+  [4;35;1mSQL (51.7ms)[0m   [0mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` text, `category_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mCategory Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mCategory Create (0.4ms)[0m   [0;1mINSERT INTO `categories` (`created_at`, `title`, `updated_at`) VALUES('2009-12-02 22:47:54', 'peciva', '2009-12-02 22:47:54')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDROP TABLE `categories`[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE `items`[0m
+  [4;35;1mSQL (38.5ms)[0m   [0mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` text, `category_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mCategory Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCategory Create (0.3ms)[0m   [0;1mINSERT INTO `categories` (`created_at`, `title`, `updated_at`) VALUES('2009-12-02 22:48:19', 'peciva', '2009-12-02 22:48:19')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mItem Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:48:19', 'rohlíky', '2009-12-02 22:48:19', 1)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:48:19', 'chleba', '2009-12-02 22:48:19', 1)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:48:19', 'veku', '2009-12-02 22:48:19', 1)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:48:19', 'borůvkový zákusek', '2009-12-02 22:48:19', 1)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-02 23:52:47) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-12-02 23:53:11) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mItem Load (0.4ms)[0m   [0;1mSELECT `items`.* FROM `items` WHERE (`items`.category_id = 1) [0m
+  [4;35;1mItem Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+Rendering items/index
+Completed in 37ms (View: 7, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-12-02 23:53:30) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mItem Load (0.3ms)[0m   [0;1mSELECT `items`.* FROM `items` WHERE (`items`.category_id = 1) [0m
+  [4;35;1mItem Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+Rendering items/index
+Completed in 19ms (View: 6, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-12-02 23:54:16) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mItem Load (0.3ms)[0m   [0;1mSELECT `items`.* FROM `items` WHERE (`items`.category_id = 1) [0m
+  [4;35;1mItem Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+Rendering items/index
+Completed in 19ms (View: 6, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (123.0ms)[0m   [0mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (283.6ms)[0m   [0mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` text, `category_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (56.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (251.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091202223029')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091202222104')[0m
+  [4;35;1mCategory Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (0.3ms)[0m   [0mINSERT INTO `categories` (`created_at`, `title`, `updated_at`) VALUES('2009-12-02 22:55:53', 'pečiva', '2009-12-02 22:55:53')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:55:53', 'rohlíky', '2009-12-02 22:55:53', 1)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:55:53', 'chleba', '2009-12-02 22:55:53', 1)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:55:53', 'veku', '2009-12-02 22:55:53', 1)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:55:53', 'borůvkový zákusek', '2009-12-02 22:55:53', 1)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`created_at`, `title`, `updated_at`) VALUES('2009-12-02 22:55:53', 'těstovin', '2009-12-02 22:55:53')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:55:53', 'špagety', '2009-12-02 22:55:53', 2)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:55:53', 'vrtulky', '2009-12-02 22:55:53', 2)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:55:53', 'pesto', '2009-12-02 22:55:53', 2)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 22:55:53', 'kečup', '2009-12-02 22:55:53', 2)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-12-02 23:55:55) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mItem Load (0.3ms)[0m   [0;1mSELECT `items`.* FROM `items` WHERE (`items`.category_id IN (1,2)) [0m
+  [4;35;1mItem Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+Rendering items/index
+Completed in 14ms (View: 1, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-12-02 23:59:54) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mItem Load (0.3ms)[0m   [0;1mSELECT `items`.* FROM `items` WHERE (`items`.category_id IN (1,2)) [0m
+  [4;35;1mItem Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+Rendering items/index
+Completed in 20ms (View: 6, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-12-03 00:00:24) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mItem Load (0.3ms)[0m   [0;1mSELECT `items`.* FROM `items` WHERE (`items`.category_id IN (1,2)) [0m
+  [4;35;1mItem Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+Rendering items/index
+Completed in 20ms (View: 6, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-12-03 00:01:05) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mItem Load (0.4ms)[0m   [0;1mSELECT `items`.* FROM `items` WHERE (`items`.category_id IN (1,2)) [0m
+  [4;35;1mItem Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+Rendering items/index
+Completed in 21ms (View: 7, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (267.9ms)[0m   [0mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (401.8ms)[0m   [0mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` text, `category_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (326.2ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091202223029')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091202222104')[0m
+  [4;35;1mCategory Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (0.3ms)[0m   [0mINSERT INTO `categories` (`created_at`, `title`, `updated_at`) VALUES('2009-12-02 23:03:42', 'pečiva', '2009-12-02 23:03:42')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mItem Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'rohlíky', '2009-12-02 23:03:42', 1)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'chleba', '2009-12-02 23:03:42', 1)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'veku', '2009-12-02 23:03:42', 1)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'borůvkový zákusek', '2009-12-02 23:03:42', 1)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCategory Create (0.2ms)[0m   [0mINSERT INTO `categories` (`created_at`, `title`, `updated_at`) VALUES('2009-12-02 23:03:42', 'těstovin', '2009-12-02 23:03:42')[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'špagety', '2009-12-02 23:03:42', 2)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'vrtulky', '2009-12-02 23:03:42', 2)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'pesto', '2009-12-02 23:03:42', 2)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'kečup', '2009-12-02 23:03:42', 2)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCategory Create (0.2ms)[0m   [0;1mINSERT INTO `categories` (`created_at`, `title`, `updated_at`) VALUES('2009-12-02 23:03:42', 'zeleniny', '2009-12-02 23:03:42')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'mrkev', '2009-12-02 23:03:42', 3)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'petržel', '2009-12-02 23:03:42', 3)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'lilek', '2009-12-02 23:03:42', 3)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.1ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'zelenou papriku', '2009-12-02 23:03:42', 3)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'rajčata', '2009-12-02 23:03:42', 3)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCategory Create (0.1ms)[0m   [0;1mINSERT INTO `categories` (`created_at`, `title`, `updated_at`) VALUES('2009-12-02 23:03:42', 'ovoce', '2009-12-02 23:03:42')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.1ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'jablka', '2009-12-02 23:03:42', 4)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'hrušky', '2009-12-02 23:03:42', 4)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO `items` (`created_at`, `title`, `updated_at`, `category_id`) VALUES('2009-12-02 23:03:42', 'kaki', '2009-12-02 23:03:42', 4)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ItemsController#index (for 127.0.0.1 at 2009-12-03 00:03:44) [GET]
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM `categories` [0m
+  [4;35;1mCategory Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mItem Load (0.4ms)[0m   [0;1mSELECT `items`.* FROM `items` WHERE (`items`.category_id IN (1,2,3,4)) [0m
+  [4;35;1mItem Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+Rendering items/index
+Completed in 18ms (View: 4, DB: 4) | 200 OK [http://localhost/]

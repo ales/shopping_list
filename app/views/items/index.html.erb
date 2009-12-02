@@ -1,0 +1,16 @@
+<%- @categories.each do |category| -%>
+<h2>V oddělení <%= category.title %> koupit:</h2>
+<ul>
+	<%- category.items.each do |item| -%>
+		<li><%= item.title %></li>
+	<% end -%>
+</ul>
+<% end -%>
+
+<h2>K pokladně</h2>
+<ul>
+	<li>Do košíku nebyly vloženy <%= link_to "4 položky" %>.</li>
+	<li><%= link_to "Označit všechny položky" %>.</li>
+	<li><%= link_to "Odznačit všechny položky" %>.</li>
+	<li><%= link_to "Ukončit nákup" %>.</li>
+</ul>
