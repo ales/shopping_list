@@ -1,16 +1,13 @@
 <%- @categories.each do |category| -%>
 <h2>V oddělení <%= category.title %> koupit:</h2>
 <ul>
-	<%- category.items.each do |item| -%>
-		<li><%= item.title %></li>
-	<% end -%>
+	<%= render category.items %>
 </ul>
 <% end -%>
 
 <h2>K pokladně</h2>
-<ul>
-	<li>Do košíku nebyly vloženy <%= link_to "4 položky" %>.</li>
-	<li><%= link_to "Označit všechny položky" %>.</li>
-	<li><%= link_to "Odznačit všechny položky" %>.</li>
-	<li><%= link_to "Ukončit nákup" %>.</li>
+<ul class="list">
+	<li><%= link_to "Zbývá položek: <span id=\"items_left\">#{@items_left}</span>", "#body" %>.</li>
+	<li><%= link_to_remote "Označit všechny položky", :url => select_items_path, :method => :post %>.</li>
+	<li><%= link_to_remote "Odznačit všechny položky", :url => deselect_items_path, :method => :post %>.</li>
 </ul>

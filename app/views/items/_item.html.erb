@@ -1,0 +1,10 @@
+<li>
+	<% form_for item do |f| -%>
+		<%= f.check_box :checked, :id => "item_checked_#{item.id}", :class => 'checkbox' %> <%= f.label "checked_#{item.id}", item.title %>
+	<% end -%>
+	
+	<%= observe_field("item_checked_#{item.id}",
+		:url => item,
+		:method => :put,
+		:with => "'item[checked]=' + encodeURIComponent(value)" )%>
+</li>

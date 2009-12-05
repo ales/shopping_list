@@ -1,0 +1,3 @@
+page.select(".checkbox").each{ |c| c.checked = false }
+
+page[:items_left].replace_html @items_left

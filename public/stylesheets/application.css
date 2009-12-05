@@ -1,0 +1,45 @@
+html {
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-size: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+h2 {
+	font-size: 100%;
+	font-weight: normal;
+	margin: 0;
+	padding: .7ex 0 .7ex .5em;
+	background-color: #ebe454;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.list {
+	list-style-type: disc;
+}
+
+ul.list li {
+	padding-left: 1em;
+	list-style-position: inside;
+}
+
+li {
+	padding-top: .7ex;
+	padding-left: .5em;
+	height: 3ex;
+	vertical-align: bottom;
+	border-top: 1px solid #ddd;
+	
+}
+
+label {
+	margin-left: .3em;
+}
